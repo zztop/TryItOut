@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Try It Out</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml"> -->
+    <meta name="theme-color" content="#563d7c" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      label {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      }
+    </style>
+  </head>
+  <body class="text-center bg-dark text-white">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <main role="main" class="inner cover">
+        <div
+          class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center text-white rounded border-info"
+        >
+          <h1 class="display-2 font-italic">Try It Out</h1>
+          <h2>Be Different, Try what others won't</h2>
+        </div>
+        <div class="container rest-info">
+          <h4 class="text-white font-italic">
+            Select cuisine you like, and see what others wont try, or be a SHEEP
+            and follow
+          </h4>
+          <div class="col p-5 text-white">
+            <div class="row mx-lg-n5">
+              <form class="form-inline">
+                <div class="form-group">
+                  <label for="cuisine" class="mr-sm-4">Cuisine</label>
+                  <select
+                    class="custom-select my-1 mr-sm-4"
+                    id="cuisine"
+                    onchange="toggleButton(this)"
+                  >
+                    <option selected>----Select Cuisine----</option>
+                  </select>
+                  <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your password must 
+                  </small> -->
+                </div>
+                <div class="form-group">
+                  <label for="state" class="mr-sm-4">State</label>
+                  <select
+                    class="custom-select my-1 mr-sm-4"
+                    id="state"
+                    onchange="toggleButton(this)"
+                  >
+                    <option selected>----Select State----</option>
+                  </select>
+                  <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your password must be 8-20 
+                  </small> -->
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary my-1 mr-sm-4 try-it-button"
+                  disabled="true"
+                >
+                  I Wanna Try
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary my-1 mr-sm-4 sheep-button"
+                  disabled="true"
+                >
+                  I Wanna Be A Sheep
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <!-- <div class="inner">
+      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    </div> -->
+      </footer>
+      <template class="main-tpl">
+        <div class="row main-content-alert">
+          <div class="col">
+            <div class="alert" role="alert">
+              <h4 class="alert-heading"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="row main-content">
+          <div class="col most-pop">
+            <div class="row"><h3 class="text-left">Most Popular</h3></div>
+          </div>
+          <div class="col-5 align-self-center">
+            <div class="row align-items-center">
+              <div class="col">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe
+                    class="embed-responsive-item d-none"
+                    src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAdcZlFVAPUdWEqfKHITpI6aLIWRMUYXSs
+      &center=-33.8569,151.2152"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col highly-rated">
+            <div class="row"><h3 class="text-right">Highly Rated</h3></div>
+          </div>
+        </div>
+      </template>
+      <template class="rest-tpl">
+        <div class="card text-white bg-dark" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+            <a href="#" class="card-link">Location</a>
+          </div>
+        </div>
+      </template>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const popular = [
+        {
+          categories: "Afghan",
+          state: "AZ",
+          name: "Khyber Halal",
+          full_address: "4030 N 24th St\nPhoenix, AZ 85016",
+          review_count: 79,
+          latitude: 33.4940035,
+          longitude: -112.0302179,
+        },
+        {
+          categories: "Afghan",
+          state: "AZ",
+          name: "Flaming Kabob",
+          full_address: "2252 E Baseline Rd\nMesa, AZ 85204",
+          review_count: 79,
+          latitude: 33.379512,
+          longitude: -111.78441,
+        },
+        {
+          categories: "Afghan",
+          state: "AZ",
+          name: "Rania's Kabob Grill",
+          full_address: "1674 N Higley Rd\nSte 104\nGilbert, AZ 85234",
+          review_count: 70,
+          latitude: 33.381279,
+          longitude: -111.724168,
+        },
+        {
+          categories: "Afghan",
+          state: "NV",
+          name: "Kabob Express",
+          full_address:
+            "4912 S Eastern Ave\nSte 3\nSoutheast\nLas Vegas, NV 89119",
+          review_count: 62,
+          latitude: 36.0996917,
+          longitude: -115.1179542,
+        },
+        {
+          categories: "Afghan",
+          state: "NV",
+          name: "Kabob Factory",
+          full_address:
+            "8150 S Maryland Pkwy\n120\nSoutheast\nLas Vegas, NV 89123",
+          review_count: 18,
+          latitude: 36.0416591,
+          longitude: -115.1353976,
+        },
+        {
+          categories: "Afghan",
+          state: "NV",
+          name: "Royal Kabob Restaurant",
+          full_address:
+            "9320 Sun City Blvd\n#101\nSummerlin\nLas Vegas, NV 89134",
+          review_count: 3,
+          latitude: 36.2112472,
+          longitude: -115.2987804,
+        },
+        {
+          categories: "Afghan",
+          state: "WI",
+          name: "Kabul Restaurant",
+          full_address: "541 State St\nCapitol\nMadison, WI 53703",
+          review_count: 92,
+          latitude: 43.0748598,
+          longitude: -89.3951624,
+        },
+        {
+          categories: "Afghan",
+          state: "WI",
+          name: "Maza",
+          full_address: "558 State St\nCapitol\nMadison, WI 53774",
+          review_count: 6,
+          latitude: 43.075141,
+          longitude: -89.394958,
+        },
+        {
+          categories: "American (New)",
+          state: "AZ",
+          name: "Four Peaks Brewing Co",
+          full_address: "1340 E 8th St\nSte 104\nTempe, AZ 85281",
+          review_count: 1110,
+          latitude: 33.419568,
+          longitude: -111.916097,
+        },
+        {
+          categories: "American (New)",
+          state: "AZ",
+          name: "Citizen Public House",
+          full_address: "7111 E 5th Ave\nSte E\nScottsdale, AZ 85251",
+          review_count: 760,
+          latitude: 33.49821,
+          longitude: -111.927963,
+        },
+        {
+          categories: "American (New)",
+          state: "AZ",
+          name: "Lux",
+          full_address: "4402 N Central Ave\nPhoenix, AZ 85012",
+          review_count: 747,
+          latitude: 33.5005719,
+          longitude: -112.0741143,
+        },
+        {
+          categories: "American (New)",
+          state: "NV",
+          name: "Hash House A Go Go",
+          full_address: "6800 W Sahara Ave\nWestside\nLas Vegas, NV 89146",
+          review_count: 2201,
+          latitude: 36.144667,
+          longitude: -115.239955,
+        },
+        {
+          categories: "American (New)",
+          state: "NV",
+          name: "Hash House A Go Go",
+          full_address:
+            "The Quad Resort & Casino\n3535 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 1759,
+          latitude: 36.1178829948,
+          longitude: -115.1712445398,
+        },
+        {
+          categories: "American (New)",
+          state: "NV",
+          name: "Tom Colicchio's Craftsteak",
+          full_address:
+            "MGM Grand Hotel and Casino\n3799 Las Vegas Blvd S\nEastside\nLas Vegas, NV 89109",
+          review_count: 1413,
+          latitude: 36.103053,
+          longitude: -115.167691,
+        },
+        {
+          categories: "American (New)",
+          state: "WI",
+          name: "Great Dane Pub & Brewing Co",
+          full_address: "123 E Doty St\nCapitol\nMadison, WI 53703",
+          review_count: 406,
+          latitude: 43.0740105231,
+          longitude: -89.3808683753,
+        },
+        {
+          categories: "American (New)",
+          state: "WI",
+          name: "Graze",
+          full_address: "1 S Pinckney St\nCapitol\nMadison, WI 53703",
+          review_count: 370,
+          latitude: 43.0749541,
+          longitude: -89.3824477,
+        },
+        {
+          categories: "American (New)",
+          state: "WI",
+          name: "Weary Traveler ",
+          full_address:
+            "1201 Williamson St\nWilliamson - Marquette\nMadison, WI 53703",
+          review_count: 270,
+          latitude: 43.0832527245,
+          longitude: -89.3643164635,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "AZ",
+          name: "Joe's Farm Grill",
+          full_address: "3000 E Ray Rd\nBldg 1\nGilbert, AZ 85296",
+          review_count: 770,
+          latitude: 33.3210616448,
+          longitude: -111.7239189148,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "AZ",
+          name: "Chelsea's Kitchen",
+          full_address: "5040 N 40th St\nPhoenix, AZ 85018",
+          review_count: 680,
+          latitude: 33.5112348,
+          longitude: -111.9955879,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "AZ",
+          name: "Roaring Fork",
+          full_address: "4800 N Scottsdale Rd\nSte 1700\nScottsdale, AZ 85251",
+          review_count: 463,
+          latitude: 33.508695278,
+          longitude: -111.9270801544,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "NV",
+          name: "Serendipity 3",
+          full_address:
+            "Caesars Palace Las Vegas Hotel & Casino\n3570 Las Vegas Boulevard South\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 2682,
+          latitude: 36.117268,
+          longitude: -115.177855,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "NV",
+          name: "Burger Bar",
+          full_address:
+            "Mandalay Bay Resort & Casino\n3930 S Las Vegas Boulevard\nThe Strip\nLas Vegas, NV 89119",
+          review_count: 1876,
+          latitude: 36.092875,
+          longitude: -115.176247,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "NV",
+          name: "Holsteins Shakes and Buns",
+          full_address: "3708 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 1523,
+          latitude: 36.109622,
+          longitude: -115.1732124,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "WI",
+          name: "The Old Fashioned",
+          full_address: "23 N Pinckney St\nCapitol\nMadison, WI 53703",
+          review_count: 619,
+          latitude: 43.0760977,
+          longitude: -89.3838952,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "WI",
+          name: "Monty's Blue Plate Diner",
+          full_address: "2089 Atwood Ave\nSchenk - Atwood\nMadison, WI 53704",
+          review_count: 266,
+          latitude: 43.09242,
+          longitude: -89.3518969,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "WI",
+          name: "Bluephies",
+          full_address:
+            "2701 Monroe St\nSte 700\nDudgeon-Monroe\nMadison, WI 53711",
+          review_count: 167,
+          latitude: 43.056786,
+          longitude: -89.428984,
+        },
+        {
+          categories: "Chinese",
+          state: "AZ",
+          name: "China Magic Noodle House",
+          full_address: "2015 N Dobson Rd\nChandler, AZ 85224",
+          review_count: 240,
+          latitude: 33.336409,
+          longitude: -111.876379,
+        },
+        {
+          categories: "Chinese",
+          state: "AZ",
+          name: "China Chili",
+          full_address: "302 E Flower St\nPhoenix, AZ 85012",
+          review_count: 224,
+          latitude: 33.48585,
+          longitude: -112.0691813,
+        },
+        {
+          categories: "Chinese",
+          state: "AZ",
+          name: "Snoh Ice Shavery",
+          full_address: "914 E Camelback Rd\nUnit 4B\nPhoenix, AZ 85014",
+          review_count: 222,
+          latitude: 33.5095292,
+          longitude: -112.0609579,
+        },
+        {
+          categories: "Chinese",
+          state: "GA",
+          name: "Wok N' Roll",
+          full_address: "250 Auburn Ave NE\n#101\nAtlanta, GA 53562",
+          review_count: 16,
+          latitude: 43.11528,
+          longitude: -89.52492,
+        },
+        {
+          categories: "Chinese",
+          state: "NV",
+          name: "Pho Kim Long",
+          full_address:
+            "4029 Spring Mountain Rd\nChinatown\nLas Vegas, NV 89102",
+          review_count: 1314,
+          latitude: 36.126177,
+          longitude: -115.193971,
+        },
+        {
+          categories: "Chinese",
+          state: "NV",
+          name: "SUSHISAMBA Las Vegas",
+          full_address:
+            "The Palazzo\n3327 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 1132,
+          latitude: 36.1239774361,
+          longitude: -115.1677567251,
+        },
+        {
+          categories: "Chinese",
+          state: "NV",
+          name: "Noodle Asia",
+          full_address:
+            "The Venetian\n3355 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 544,
+          latitude: 36.12008,
+          longitude: -115.17106,
+        },
+        {
+          categories: "Chinese",
+          state: "WI",
+          name: "Ichiban Sichuan",
+          full_address: "610 S Park St\nGreenbush\nMadison, WI 53715",
+          review_count: 95,
+          latitude: 43.060635,
+          longitude: -89.40113,
+        },
+        {
+          categories: "Chinese",
+          state: "WI",
+          name: "Fugu",
+          full_address: "411 W Gilman St\nCapitol\nMadison, WI 53703",
+          review_count: 92,
+          latitude: 43.0743859,
+          longitude: -89.3936216,
+        },
+        {
+          categories: "Chinese",
+          state: "WI",
+          name: "DumplingHaus",
+          full_address: "702 N Midvale Blvd\nMadison, WI 53705",
+          review_count: 85,
+          latitude: 43.0733473,
+          longitude: -89.4530332,
+        },
+        {
+          categories: "Indian",
+          state: "AZ",
+          name: "India Oven",
+          full_address: "1315 S Gilbert Rd\nMesa, AZ 85204",
+          review_count: 271,
+          latitude: 33.3916626,
+          longitude: -111.7880553,
+        },
+        {
+          categories: "Indian",
+          state: "AZ",
+          name: "The Dhaba",
+          full_address: "1872 E Apache Blvd\nTempe, AZ 85281",
+          review_count: 266,
+          latitude: 33.414938,
+          longitude: -111.905131,
+        },
+        {
+          categories: "Indian",
+          state: "AZ",
+          name: "Curry Corner",
+          full_address: "1212 E Apache Blvd\nTempe, AZ 85281",
+          review_count: 184,
+          latitude: 33.4153102,
+          longitude: -111.9199826,
+        },
+        {
+          categories: "Indian",
+          state: "NV",
+          name: "Mint Indian Bistro",
+          full_address:
+            "730 E Flamingo Rd\nSte 10\nEastside\nLas Vegas, NV 89119",
+          review_count: 460,
+          latitude: 36.1148754728,
+          longitude: -115.1474046707,
+        },
+        {
+          categories: "Indian",
+          state: "NV",
+          name: "Mount Everest India's Cuisine",
+          full_address: "3641 W Sahara Ave\nWestside\nLas Vegas, NV 89102",
+          review_count: 386,
+          latitude: 36.143955,
+          longitude: -115.189818,
+        },
+        {
+          categories: "Indian",
+          state: "NV",
+          name: "India Palace",
+          full_address: "505 E Twain Ave\nEastside\nLas Vegas, NV 89169",
+          review_count: 345,
+          latitude: 36.121237,
+          longitude: -115.151852,
+        },
+        {
+          categories: "Indian",
+          state: "WI",
+          name: "Maharaja Restaurant",
+          full_address: "6713 Odana Rd\nMadison, WI 53719",
+          review_count: 103,
+          latitude: 43.056081,
+          longitude: -89.4976609,
+        },
+        {
+          categories: "Indian",
+          state: "WI",
+          name: "Maharani Restaurant",
+          full_address: "380 W Washington Ave\nCapitol\nMadison, WI 53774",
+          review_count: 97,
+          latitude: 43.0717393,
+          longitude: -89.3888272,
+        },
+        {
+          categories: "Indian",
+          state: "WI",
+          name: "Swagat India",
+          full_address: "707 N Highpoint Rd\nWexford\nMadison, WI 53774",
+          review_count: 63,
+          latitude: 43.075144,
+          longitude: -89.5184935,
+        },
+        {
+          categories: "Italian",
+          state: "AZ",
+          name: "Pizzeria Bianco",
+          full_address: "623 E Adams St\nPhoenix, AZ 85004",
+          review_count: 1289,
+          latitude: 33.449233,
+          longitude: -112.065458,
+        },
+        {
+          categories: "Italian",
+          state: "AZ",
+          name: "Cibo",
+          full_address: "603 N 5th Ave\nPhoenix, AZ 85003",
+          review_count: 1052,
+          latitude: 33.45496,
+          longitude: -112.079908,
+        },
+        {
+          categories: "Italian",
+          state: "AZ",
+          name: "Postino Arcadia",
+          full_address: "3939 E Campbell Ave\nPhoenix, AZ 85018",
+          review_count: 921,
+          latitude: 33.502191,
+          longitude: -111.996292,
+        },
+        {
+          categories: "Italian",
+          state: "NV",
+          name: "LAVO Italian Restaurant & Lounge",
+          full_address: "3325 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 1019,
+          latitude: 36.1244339501,
+          longitude: -115.1690686906,
+        },
+        {
+          categories: "Italian",
+          state: "NV",
+          name: "Carnevino",
+          full_address:
+            "The Palazzo\n3325 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 772,
+          latitude: 36.124582,
+          longitude: -115.168415,
+        },
+        {
+          categories: "Italian",
+          state: "NV",
+          name: "Maggiano's Little Italy",
+          full_address:
+            "Fashion Show Mall\n3200 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 616,
+          latitude: 36.128222,
+          longitude: -115.172986,
+        },
+        {
+          categories: "Italian",
+          state: "WI",
+          name: "Tornado Steak House",
+          full_address: "116 S Hamilton St\nCapitol\nMadison, WI 53703",
+          review_count: 228,
+          latitude: 43.07243,
+          longitude: -89.38434,
+        },
+        {
+          categories: "Italian",
+          state: "WI",
+          name: "Nostrano",
+          full_address: "111 S Hamilton St\nCapitol\nMadison, WI 53703",
+          review_count: 123,
+          latitude: 43.072631,
+          longitude: -89.384011,
+        },
+        {
+          categories: "Italian",
+          state: "WI",
+          name: "Cafe Porta Alba",
+          full_address: "Hilldale Mall\n558 N Midvale Blvd\nMadison, WI 53705",
+          review_count: 100,
+          latitude: 43.0720892308,
+          longitude: -89.4522983272,
+        },
+        {
+          categories: "Japanese",
+          state: "AZ",
+          name: "Sapporo",
+          full_address: "14344 N Scottsdale Rd\nScottsdale, AZ 85254",
+          review_count: 313,
+          latitude: 33.6164728,
+          longitude: -111.9263137,
+        },
+        {
+          categories: "Japanese",
+          state: "AZ",
+          name: "Hana Japanese Eatery",
+          full_address: "5524 N 7th Ave\nPhoenix, AZ 85013",
+          review_count: 288,
+          latitude: 33.5173991,
+          longitude: -112.0824683,
+        },
+        {
+          categories: "Japanese",
+          state: "AZ",
+          name: "Hiro Sushi",
+          full_address: "9393 N 90th St\nSte 116\nScottsdale, AZ 85258",
+          review_count: 280,
+          latitude: 33.5705669,
+          longitude: -111.886606,
+        },
+        {
+          categories: "Japanese",
+          state: "NV",
+          name: "Monta Ramen",
+          full_address:
+            "5030 Spring Mountain Rd\nSte 6\nChinatown\nLas Vegas, NV 89146",
+          review_count: 1127,
+          latitude: 36.1270432,
+          longitude: -115.2096534,
+        },
+        {
+          categories: "Japanese",
+          state: "NV",
+          name: "Ichiza",
+          full_address:
+            "4355 Spring Mountain Rd\nChinatown\nLas Vegas, NV 89102",
+          review_count: 1062,
+          latitude: 36.1259078979,
+          longitude: -115.1979064941,
+        },
+        {
+          categories: "Japanese",
+          state: "NV",
+          name: "Sushi House Goyemon",
+          full_address:
+            "5255 S Decatur Blvd\nSte118\nSpring Valley\nLas Vegas, NV 89118",
+          review_count: 856,
+          latitude: 36.094661,
+          longitude: -115.208014,
+        },
+        {
+          categories: "Japanese",
+          state: "WI",
+          name: "Umami Ramen & Dumpling Bar",
+          full_address:
+            "923 Williamson St\nWilliamson - Marquette\nMadison, WI 53703",
+          review_count: 148,
+          latitude: 43.079822,
+          longitude: -89.368671,
+        },
+        {
+          categories: "Japanese",
+          state: "WI",
+          name: "Takumi Japanese Restaurant",
+          full_address: "4222 E Towne Blvd\nMadison, WI 53704",
+          review_count: 105,
+          latitude: 43.124601,
+          longitude: -89.309968,
+        },
+        {
+          categories: "Japanese",
+          state: "WI",
+          name: "Red Sushi",
+          full_address: "106 King St\nCapitol\nMadison, WI 53703",
+          review_count: 104,
+          latitude: 43.0748405457,
+          longitude: -89.3813018799,
+        },
+        {
+          categories: "Lebanese",
+          state: "AZ",
+          name: "Hummus Xpress",
+          full_address: "930 W Broadway Rd\nSte 11\nTempe, AZ 85282",
+          review_count: 177,
+          latitude: 33.407803263,
+          longitude: -111.9537532317,
+        },
+        {
+          categories: "Lebanese",
+          state: "AZ",
+          name: "Mijana",
+          full_address: "1290 N Scottsdale Rd\nSte 107\nTempe, AZ 85281",
+          review_count: 111,
+          latitude: 33.442946,
+          longitude: -111.92746,
+        },
+        {
+          categories: "Lebanese",
+          state: "AZ",
+          name: "Princess Mediterranean Market & Deli",
+          full_address: "2620 W Broadway Rd\nMesa, AZ 85202",
+          review_count: 76,
+          latitude: 33.407997,
+          longitude: -111.887898,
+        },
+        {
+          categories: "Lebanese",
+          state: "NV",
+          name: "Hedary's Mediterranean Restaurant",
+          full_address:
+            "7365 W Sahara Ave\nSte K\nWestside\nLas Vegas, NV 89117",
+          review_count: 101,
+          latitude: 36.1430817,
+          longitude: -115.2536257,
+        },
+        {
+          categories: "Lebanese",
+          state: "NV",
+          name: "ZiKiZ",
+          full_address:
+            "1500 N Green Valley Pkwy\nSte 230\nHenderson, NV 89074",
+          review_count: 48,
+          latitude: 36.02951,
+          longitude: -115.086426,
+        },
+        {
+          categories: "Lebanese",
+          state: "WI",
+          name: "People's Bakery",
+          full_address: "2810 E Washington Ave\nEken Park\nMadison, WI 53704",
+          review_count: 40,
+          latitude: 43.102942,
+          longitude: -89.345949,
+        },
+        {
+          categories: "Mediterranean",
+          state: "AZ",
+          name: "FEZ",
+          full_address: "3815 N Central Ave\nPhoenix, AZ 85012",
+          review_count: 1046,
+          latitude: 33.4916953,
+          longitude: -112.0734977,
+        },
+        {
+          categories: "Mediterranean",
+          state: "AZ",
+          name: "Persian Room",
+          full_address: "17040 N Scottsdale Rd\nScottsdale, AZ 85255",
+          review_count: 273,
+          latitude: 33.641182,
+          longitude: -111.9257091,
+        },
+        {
+          categories: "Mediterranean",
+          state: "AZ",
+          name: "Queen Creek Olive Mill",
+          full_address: "25062 S Meridian Rd\nQueen Creek, AZ 85142",
+          review_count: 241,
+          latitude: 33.2207848076,
+          longitude: -111.583271151,
+        },
+        {
+          categories: "Mediterranean",
+          state: "NV",
+          name: "Olives",
+          full_address:
+            "Bellagio Resort &Casino\n3600 S Las Vegas Blvd\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 980,
+          latitude: 36.111978,
+          longitude: -115.17698,
+        },
+        {
+          categories: "Mediterranean",
+          state: "NV",
+          name: "The Great Greek",
+          full_address: "1275 W Warm Springs Rd\nSte 160\nHenderson, NV 89014",
+          review_count: 279,
+          latitude: 36.0555969018,
+          longitude: -115.0416366198,
+        },
+        {
+          categories: "Mediterranean",
+          state: "NV",
+          name: "Paymon's Mediterranean Cafe & Lounge",
+          full_address: "4147 S Maryland Pkwy\nEastside\nLas Vegas, NV 89119",
+          review_count: 274,
+          latitude: 36.1135943,
+          longitude: -115.13823,
+        },
+        {
+          categories: "Mediterranean",
+          state: "WI",
+          name: "Banzo",
+          full_address: "2105 Sherman Ave\nMadison, WI 53704",
+          review_count: 132,
+          latitude: 43.1016722349,
+          longitude: -89.3645954132,
+        },
+        {
+          categories: "Mediterranean",
+          state: "WI",
+          name: "Mediterranean Cafe",
+          full_address: "625 State St\nCapitol\nMadison, WI 53703",
+          review_count: 101,
+          latitude: 43.0748824,
+          longitude: -89.3964056,
+        },
+        {
+          categories: "Mediterranean",
+          state: "WI",
+          name: "Bunky's Cafe",
+          full_address: "2425 Atwood Ave\nSchenk - Atwood\nMadison, WI 53704",
+          review_count: 85,
+          latitude: 43.093634,
+          longitude: -89.346172,
+        },
+        {
+          categories: "Mexican",
+          state: "AZ",
+          name: "Gallo Blanco",
+          full_address: "401 W Clarendon Ave\nPhoenix, AZ 85013",
+          review_count: 837,
+          latitude: 33.4914048761,
+          longitude: -112.0791345835,
+        },
+        {
+          categories: "Mexican",
+          state: "AZ",
+          name: "Chino Bandido",
+          full_address: "15414 N 19th Ave\nSte K\nPhoenix, AZ 85023",
+          review_count: 660,
+          latitude: 33.626933,
+          longitude: -112.100731,
+        },
+        {
+          categories: "Mexican",
+          state: "AZ",
+          name: "Barrio Caf\u00e9",
+          full_address: "2814 N 16th St\nPhoenix, AZ 85006",
+          review_count: 595,
+          latitude: 33.479028,
+          longitude: -112.047888,
+        },
+        {
+          categories: "Mexican",
+          state: "NV",
+          name: "Tacos El Gordo",
+          full_address: "3049 S Las Vegas Blvd\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 1035,
+          latitude: 36.1314439,
+          longitude: -115.1648858,
+        },
+        {
+          categories: "Mexican",
+          state: "NV",
+          name: "KoMex Fusion",
+          full_address: "633 N Decatur Blvd\nSte H\nLas Vegas, NV 89107",
+          review_count: 837,
+          latitude: 36.179939,
+          longitude: -115.206417,
+        },
+        {
+          categories: "Mexican",
+          state: "NV",
+          name: "China Poblano",
+          full_address: "3708 Las Vegas Blvd S\nThe Strip\nLas Vegas, NV 89109",
+          review_count: 735,
+          latitude: 36.109622,
+          longitude: -115.1732124,
+        },
+        {
+          categories: "Mexican",
+          state: "WI",
+          name: "Taqueria Guadalajara",
+          full_address: "1033 S Park St\nBay Creek\nMadison, WI 53715",
+          review_count: 166,
+          latitude: 43.0555394,
+          longitude: -89.3974783,
+        },
+        {
+          categories: "Mexican",
+          state: "WI",
+          name: "Eldorado Grill",
+          full_address:
+            "744 Williamson St\nWilliamson - Marquette\nMadison, WI 53703",
+          review_count: 116,
+          latitude: 43.07811,
+          longitude: -89.372173,
+        },
+        {
+          categories: "Mexican",
+          state: "WI",
+          name: "Tex Tubb's Taco Palace",
+          full_address: "2009 Atwood Ave\nSchenk - Atwood\nMadison, WI 53704",
+          review_count: 114,
+          latitude: 43.0920977,
+          longitude: -89.3547317,
+        },
+        {
+          categories: "Moroccan",
+          state: "AZ",
+          name: "Alzohour Market",
+          full_address: "7814 N 27th Ave\nPhoenix, AZ 85051",
+          review_count: 11,
+          latitude: 33.5515865,
+          longitude: -112.1169962,
+        },
+        {
+          categories: "Moroccan",
+          state: "NV",
+          name: "Argana",
+          full_address: "8615 W Sahara Ave\nWestside\nLas Vegas, NV 89117",
+          review_count: 27,
+          latitude: 36.1439829,
+          longitude: -115.2796682,
+        },
+        {
+          categories: "Moroccan",
+          state: "NV",
+          name: "Marrakesh Express",
+          full_address: "101 Montelago Blvd\nHenderson, NV 89011",
+          review_count: 3,
+          latitude: 36.113933,
+          longitude: -114.923133,
+        },
+        {
+          categories: "Moroccan",
+          state: "WI",
+          name: "Faouzi's Restaurant",
+          full_address:
+            "4245 W Beltline Hwy\nAllied Dunn's Marsh\nMadison, WI 53711",
+          review_count: 6,
+          latitude: 43.0345247,
+          longitude: -89.445519,
+        },
+        {
+          categories: "Turkish",
+          state: "AZ",
+          name: "MedFresh Grill",
+          full_address: "414 S Mill Ave\nSte 117\nTempe, AZ 85281",
+          review_count: 94,
+          latitude: 33.4259647,
+          longitude: -111.9402513,
+        },
+        {
+          categories: "Turkish",
+          state: "AZ",
+          name: "Turkish Kitchen",
+          full_address: "393 W Warner Rd\nSte 103\nChandler, AZ 85225",
+          review_count: 40,
+          latitude: 33.334536,
+          longitude: -111.846555,
+        },
+        {
+          categories: "Turkish",
+          state: "AZ",
+          name: "Efes Turkish Cuisine",
+          full_address: "1701 E. Guadalupe Rd\nTempe, AZ 85283",
+          review_count: 15,
+          latitude: 33.3634187,
+          longitude: -111.9130595,
+        },
+        {
+          categories: "Turkish",
+          state: "NV",
+          name: "Maza Mediterranean Grill & Lounge",
+          full_address:
+            "2550 S Rainbow Blvd\nSte  W1\nWestside\nLas Vegas, NV 89146",
+          review_count: 18,
+          latitude: 36.1433968,
+          longitude: -115.2419755,
+        },
+        {
+          categories: "Turkish",
+          state: "NV",
+          name: "Ibo Turkish and Mediterranean Restaurant",
+          full_address:
+            "9755 W Flamingo Rd\nSpring Valley\nLas Vegas, NV 89147",
+          review_count: 10,
+          latitude: 36.1135909,
+          longitude: -115.3053069,
+        },
+      ];
+      const sentiment = [
+        {
+          categories: "Turkish",
+          state: "NV",
+          index: 6109,
+          name: "Maza Mediterranean Grill & Lounge",
+          full_address:
+            "2550 S Rainbow Blvd\nSte  W1\nWestside\nLas Vegas, NV 89146",
+          latitude: 36.1433968,
+          longitude: -115.2419755,
+          sentiment: 0.1111111111,
+        },
+        {
+          categories: "Turkish",
+          state: "AZ",
+          index: 6111,
+          name: "Turkish Kitchen",
+          full_address: "393 W Warner Rd\nSte 103\nChandler, AZ 85225",
+          latitude: 33.334536,
+          longitude: -111.846555,
+          sentiment: 0.425,
+        },
+        {
+          categories: "Turkish",
+          state: "AZ",
+          index: 6108,
+          name: "Efes Turkish Cuisine",
+          full_address: "1701 E. Guadalupe Rd\nTempe, AZ 85283",
+          latitude: 33.3634187,
+          longitude: -111.9130595,
+          sentiment: 0.2666666667,
+        },
+        {
+          categories: "Turkish",
+          state: "AZ",
+          index: 6110,
+          name: "MedFresh Grill",
+          full_address: "414 S Mill Ave\nSte 117\nTempe, AZ 85281",
+          latitude: 33.4259647,
+          longitude: -111.9402513,
+          sentiment: 0.2127659574,
+        },
+        {
+          categories: "Moroccan",
+          state: "WI",
+          index: 6107,
+          name: "Faouzi's Restaurant",
+          full_address:
+            "4245 W Beltline Hwy\nAllied Dunn's Marsh\nMadison, WI 53711",
+          latitude: 43.0345247,
+          longitude: -89.445519,
+          sentiment: 0.3333333333,
+        },
+        {
+          categories: "Moroccan",
+          state: "NV",
+          index: 6106,
+          name: "Argana",
+          full_address: "8615 W Sahara Ave\nWestside\nLas Vegas, NV 89117",
+          latitude: 36.1439829,
+          longitude: -115.2796682,
+          sentiment: 0.3333333333,
+        },
+        {
+          categories: "Moroccan",
+          state: "AZ",
+          index: 6105,
+          name: "Alzohour Market",
+          full_address: "7814 N 27th Ave\nPhoenix, AZ 85051",
+          latitude: 33.5515865,
+          longitude: -112.1169962,
+          sentiment: 0.1818181818,
+        },
+        {
+          categories: "Mexican",
+          state: "WI",
+          index: 5212,
+          name: "Habanero's Mexican Grill",
+          full_address: "3001 N Sherman Ave\nSherman\nMadison, WI 53704",
+          latitude: 43.1297225601,
+          longitude: -89.3627387103,
+          sentiment: 0.8333333333,
+        },
+        {
+          categories: "Mexican",
+          state: "WI",
+          index: 5364,
+          name: "Las Islas Del Mar",
+          full_address: "5696 Monona Dr\nGlendale\nMadison, WI 53716",
+          latitude: 43.0585482,
+          longitude: -89.3257269,
+          sentiment: 0.6923076923,
+        },
+        {
+          categories: "Mexican",
+          state: "WI",
+          index: 6026,
+          name: "Tienda Los Gemelos",
+          full_address: "6713 Odana Rd\nSte 8\nMadison, WI 53719",
+          latitude: 43.056081,
+          longitude: -89.4976609,
+          sentiment: 0.5666666667,
+        },
+        {
+          categories: "Mexican",
+          state: "NV",
+          index: 4627,
+          name: "Antojos Df",
+          full_address: "3430 E Tropicana Ave\nEastside\nLas Vegas, NV 89121",
+          latitude: 36.1008539,
+          longitude: -115.0995169,
+          sentiment: 0.8,
+        },
+        {
+          categories: "Mexican",
+          state: "NV",
+          index: 5963,
+          name: "Tacos Los Toritos",
+          full_address: "861 N Nellis Blvd\nSunrise\nLas Vegas, NV 89110",
+          latitude: 36.1802306,
+          longitude: -115.0623318,
+          sentiment: 0.75,
+        },
+        {
+          categories: "Mexican",
+          state: "NV",
+          index: 5857,
+          name: "Taco Azteca",
+          full_address: "4800 S Nellis Blvd\nEastside\nLas Vegas, NV 89122",
+          latitude: 36.1019718678,
+          longitude: -115.0637697625,
+          sentiment: 0.7,
+        },
+        {
+          categories: "Mexican",
+          state: "AZ",
+          index: 5071,
+          name: "El Taco Feliz",
+          full_address: "4233  S 7th St\nPhoenix, AZ 85040",
+          latitude: 33.40724,
+          longitude: -112.06422,
+          sentiment: 1.0,
+        },
+        {
+          categories: "Mexican",
+          state: "AZ",
+          index: 4945,
+          name: "Don Rafa Taqueria",
+          full_address: "1467 N Dysart Rd\nSte 107\nAvondale, AZ 85323",
+          latitude: 33.430535,
+          longitude: -112.345359,
+          sentiment: 0.8571428571,
+        },
+        {
+          categories: "Mexican",
+          state: "AZ",
+          index: 5863,
+          name: "Taco Bell",
+          full_address: "11325 W Buckeye Road\nAvondale, AZ 85323",
+          latitude: 33.43465,
+          longitude: -112.30349,
+          sentiment: 0.75,
+        },
+        {
+          categories: "Mediterranean",
+          state: "WI",
+          index: 4581,
+          name: "Zizo Cafe",
+          full_address: "1101 Sherman Ave\nTenney - Lapham\nMadison, WI 53704",
+          latitude: 43.088836,
+          longitude: -89.374657,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Mediterranean",
+          state: "WI",
+          index: 4477,
+          name: "Mediterranean Hookah Lounge and Cafe",
+          full_address:
+            "77 Sirloin Strip\nCapitol View Heights\nMadison, WI 53713",
+          latitude: 43.038886,
+          longitude: -89.386628,
+          sentiment: 0.6428571429,
+        },
+        {
+          categories: "Mediterranean",
+          state: "WI",
+          index: 4573,
+          name: "Veranda Restaurant & Wine Bar",
+          full_address: "2790 S Fish Hatchery Rd\nFitchburg, WI 53711",
+          latitude: 43.006191,
+          longitude: -89.426755,
+          sentiment: 0.3548387097,
+        },
+        {
+          categories: "Mediterranean",
+          state: "NV",
+          index: 4391,
+          name: "Cedars Restaurant",
+          full_address:
+            "4440 S Maryland Pkwy\nSte 113\nUniversity\nLas Vegas, NV 89119",
+          latitude: 36.1087848,
+          longitude: -115.1370794,
+          sentiment: 0.6,
+        },
+        {
+          categories: "Mediterranean",
+          state: "NV",
+          index: 4410,
+          name: "Ele's Fresh Mediterranean Grill",
+          full_address:
+            "Boulevard Mall\n3528 S Maryland Pkwy\nEastside\nParadise, NV 89109",
+          latitude: 36.1251193753,
+          longitude: -115.1459884644,
+          sentiment: 0.5,
+        },
+        {
+          categories: "Mediterranean",
+          state: "NV",
+          index: 4468,
+          name: "Mad Pita Express",
+          full_address:
+            "2980 S Durango Dr\nSte 101\nWestside\nLas Vegas, NV 89117",
+          latitude: 36.134956,
+          longitude: -115.278458,
+          sentiment: 0.5,
+        },
+        {
+          categories: "Mediterranean",
+          state: "AZ",
+          index: 4432,
+          name: "Greka Pita",
+          full_address: "1747 E Camelback Rd\nSte 103\nPhoenix, AZ 85016",
+          latitude: 33.5083544412,
+          longitude: -112.0437342135,
+          sentiment: 1.0,
+        },
+        {
+          categories: "Mediterranean",
+          state: "AZ",
+          index: 4529,
+          name: "Queen Creek Olive Mill Oils & Olives Kierland Commons",
+          full_address: "7122 E Greenway Pkwy\nSte 120\nScottsdale, AZ 85254",
+          latitude: 33.6228883,
+          longitude: -111.9293764,
+          sentiment: 0.5833333333,
+        },
+        {
+          categories: "Mediterranean",
+          state: "AZ",
+          index: 4479,
+          name: "Mike's Greek & Italian Cuisine",
+          full_address: "17191 N Litchfield Rd\nSurprise, AZ 85374",
+          latitude: 33.6403184,
+          longitude: -112.3594317,
+          sentiment: 0.5714285714,
+        },
+        {
+          categories: "Lebanese",
+          state: "WI",
+          index: 4365,
+          name: "People's Bakery",
+          full_address: "2810 E Washington Ave\nEken Park\nMadison, WI 53704",
+          latitude: 43.102942,
+          longitude: -89.345949,
+          sentiment: 0.325,
+        },
+        {
+          categories: "Lebanese",
+          state: "NV",
+          index: 4367,
+          name: "ZiKiZ",
+          full_address:
+            "1500 N Green Valley Pkwy\nSte 230\nHenderson, NV 89074",
+          latitude: 36.02951,
+          longitude: -115.086426,
+          sentiment: 0.3333333333,
+        },
+        {
+          categories: "Lebanese",
+          state: "NV",
+          index: 4361,
+          name: "Hedary's Mediterranean Restaurant",
+          full_address:
+            "7365 W Sahara Ave\nSte K\nWestside\nLas Vegas, NV 89117",
+          latitude: 36.1430817,
+          longitude: -115.2536257,
+          sentiment: 0.2475247525,
+        },
+        {
+          categories: "Lebanese",
+          state: "AZ",
+          index: 4366,
+          name: "Princess Mediterranean Market & Deli",
+          full_address: "2620 W Broadway Rd\nMesa, AZ 85202",
+          latitude: 33.407997,
+          longitude: -111.887898,
+          sentiment: 0.3947368421,
+        },
+        {
+          categories: "Lebanese",
+          state: "AZ",
+          index: 4362,
+          name: "Hummus Xpress",
+          full_address: "930 W Broadway Rd\nSte 11\nTempe, AZ 85282",
+          latitude: 33.407803263,
+          longitude: -111.9537532317,
+          sentiment: 0.3898305085,
+        },
+        {
+          categories: "Lebanese",
+          state: "AZ",
+          index: 4364,
+          name: "Oasis Cafe",
+          full_address: "4441 N Buckboard Trl\nScottsdale, AZ 85251",
+          latitude: 33.5017388,
+          longitude: -111.9233588,
+          sentiment: 0.2941176471,
+        },
+        {
+          categories: "Japanese",
+          state: "WI",
+          index: 4314,
+          name: "Umami Buns",
+          full_address:
+            "University of Wisconsin- Madison\n716-798 State St\nMadison, WI 53706",
+          latitude: 43.0779340985,
+          longitude: -89.3987419456,
+          sentiment: 0.6,
+        },
+        {
+          categories: "Japanese",
+          state: "WI",
+          index: 4358,
+          name: "Zen Sushi",
+          full_address: "700 State St\nCapitol\nMadison, WI 53706",
+          latitude: 43.0749079,
+          longitude: -89.3973862,
+          sentiment: 0.4,
+        },
+        {
+          categories: "Japanese",
+          state: "WI",
+          index: 4046,
+          name: "Kushi Bar Muramoto",
+          full_address: "106 King St\nCapitol\nMadison, WI 53703",
+          latitude: 43.0747393,
+          longitude: -89.3813418,
+          sentiment: 0.3571428571,
+        },
+        {
+          categories: "Japanese",
+          state: "NV",
+          index: 3987,
+          name: "Hibachi-San",
+          full_address: "3480 S Maryland Pkwy\nEastside\nLas Vegas, NV 89169",
+          latitude: 36.1263354,
+          longitude: -115.1371159,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Japanese",
+          state: "NV",
+          index: 4280,
+          name: "Teriyaki Madness",
+          full_address: "6171 N Decatur Blvd\nSte 110\nLas Vegas, NV 89130",
+          latitude: 36.238116,
+          longitude: -115.151479,
+          sentiment: 0.5714285714,
+        },
+        {
+          categories: "Japanese",
+          state: "NV",
+          index: 4322,
+          name: "Winter In July - A Pop-Up Lunch with Yonaka and Snow Shavery",
+          full_address: "4983 W Flamingo Rd\nLas Vegas, NV 89103",
+          latitude: 36.114935,
+          longitude: -115.209737,
+          sentiment: 0.5714285714,
+        },
+        {
+          categories: "Japanese",
+          state: "AZ",
+          index: 4065,
+          name: "Mikado Sushi",
+          full_address: "3941 E Chandler Blvd\nSte 107\nPhoenix, AZ 85048",
+          latitude: 33.3051079,
+          longitude: -111.9994,
+          sentiment: 0.7142857143,
+        },
+        {
+          categories: "Japanese",
+          state: "AZ",
+          index: 4270,
+          name: "Tep Grill To Go",
+          full_address:
+            "10575 W Indian School Rd\nSte E-107\nAvondale, AZ 85392",
+          latitude: 33.4928229,
+          longitude: -112.2859562,
+          sentiment: 0.6,
+        },
+        {
+          categories: "Japanese",
+          state: "AZ",
+          index: 3931,
+          name: "Banzai Cowboy Sushi & Martini Bar",
+          full_address: "20715 N Pima Rd\nSte 110\nScottsdale, AZ 85255",
+          latitude: 33.6729823,
+          longitude: -111.8904749,
+          sentiment: 0.5714285714,
+        },
+        {
+          categories: "Italian",
+          state: "WI",
+          index: 3340,
+          name: "Fraboni's Italian Specialties & Delicatessen",
+          full_address: "108 Owen Rd\nMonona, WI 53716",
+          latitude: 43.056621,
+          longitude: -89.326717,
+          sentiment: 0.8571428571,
+        },
+        {
+          categories: "Italian",
+          state: "WI",
+          index: 3910,
+          name: "Zoe's Pizzeria",
+          full_address: "806 S Division St\nSte A\nWaunakee, WI 53597",
+          latitude: 43.185123,
+          longitude: -89.446485,
+          sentiment: 0.6,
+        },
+        {
+          categories: "Italian",
+          state: "WI",
+          index: 3120,
+          name: "Angelo's",
+          full_address: "4706 Farwell St\nMcFarland, WI 53558",
+          latitude: 43.013609,
+          longitude: -89.301829,
+          sentiment: 0.5,
+        },
+        {
+          categories: "Italian",
+          state: "NV",
+          index: 3449,
+          name: "Luciano Garden",
+          full_address: "5715 S Pecos Rd\nSoutheast\nLas Vegas, NV 89120",
+          latitude: 36.0860009753,
+          longitude: -115.1013923809,
+          sentiment: 0.7142857143,
+        },
+        {
+          categories: "Italian",
+          state: "NV",
+          index: 3278,
+          name: "Courtyard Deli",
+          full_address:
+            "3360 W Sahara Ave\nSte 110\nWestside\nLas Vegas, NV 89102",
+          latitude: 36.145672,
+          longitude: -115.187809,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Italian",
+          state: "NV",
+          index: 3389,
+          name: "Hyakumi Japanese Restaurant & Sushi Bar",
+          full_address: "The Strip\nLas Vegas, NV 89109",
+          latitude: 36.128561,
+          longitude: -115.1711298,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Italian",
+          state: "AZ",
+          index: 3491,
+          name: "Methode Bistro",
+          full_address: "6204 N Scottsdale Rd\nScottsdale, AZ 85253",
+          latitude: 33.5278493,
+          longitude: -111.9258624,
+          sentiment: 1.0,
+        },
+        {
+          categories: "Italian",
+          state: "AZ",
+          index: 3738,
+          name: "Sabatinos Pizza Pasta Wings",
+          full_address:
+            "4860 N Litchfield Rd\nSte 104\nLitchfield Park, AZ 85340",
+          latitude: 33.50689,
+          longitude: -112.358641,
+          sentiment: 0.75,
+        },
+        {
+          categories: "Italian",
+          state: "AZ",
+          index: 3900,
+          name: "Vito & Nick's Ii",
+          full_address: "3321 E Queen Creek Rd\nGilbert, AZ 85298",
+          latitude: 33.2630712,
+          longitude: -111.717762,
+          sentiment: 0.75,
+        },
+        {
+          categories: "Indian",
+          state: "WI",
+          index: 3014,
+          name: "Dhaba Indian Bistro",
+          full_address: "8333 Greenway Blvd\nSte 100\nMiddleton, WI 53562",
+          latitude: 43.089673,
+          longitude: -89.526448,
+          sentiment: 0.3965517241,
+        },
+        {
+          categories: "Indian",
+          state: "WI",
+          index: 3055,
+          name: "Minerva Indian Cuisine",
+          full_address: "515 Junction Rd\nJunction Ridge\nMadison, WI 53717",
+          latitude: 43.0714329016,
+          longitude: -89.5244802754,
+          sentiment: 0.3714285714,
+        },
+        {
+          categories: "Indian",
+          state: "WI",
+          index: 3050,
+          name: "Maharaja Restaurant",
+          full_address: "6713 Odana Rd\nMadison, WI 53719",
+          latitude: 43.056081,
+          longitude: -89.4976609,
+          sentiment: 0.3495145631,
+        },
+        {
+          categories: "Indian",
+          state: "NV",
+          index: 3012,
+          name: "Delhi Indian Cuisine",
+          full_address: "4022 S Maryland Pkwy\nEastside\nLas Vegas, NV 89119",
+          latitude: 36.1152062,
+          longitude: -115.1377423,
+          sentiment: 0.4347826087,
+        },
+        {
+          categories: "Indian",
+          state: "NV",
+          index: 3064,
+          name: "OM Restaurant",
+          full_address:
+            "9400 S Eastern Ave\n106A\nSoutheast\nLas Vegas, NV 89123",
+          latitude: 36.0181306467,
+          longitude: -115.118054364,
+          sentiment: 0.38,
+        },
+        {
+          categories: "Indian",
+          state: "NV",
+          index: 3074,
+          name: "Saffron Flavors of India",
+          full_address:
+            "4450 N Tenaya Way\nSte 115\nNorthwest\nLas Vegas, NV 89129",
+          latitude: 36.24172,
+          longitude: -115.250134,
+          sentiment: 0.3658536585,
+        },
+        {
+          categories: "Indian",
+          state: "AZ",
+          index: 2990,
+          name: "Aachi Southindian Kitchen",
+          full_address: "325 W Elliot Rd\nTempe, AZ 85284",
+          latitude: 33.348750911,
+          longitude: -111.944757559,
+          sentiment: 0.4285714286,
+        },
+        {
+          categories: "Indian",
+          state: "AZ",
+          index: 3063,
+          name: "New India Cuisine",
+          full_address: "2544 N 7th St\nPhoenix, AZ 85006",
+          latitude: 33.4760345,
+          longitude: -112.065272,
+          sentiment: 0.4,
+        },
+        {
+          categories: "Indian",
+          state: "AZ",
+          index: 3062,
+          name: "New India Bazaar",
+          full_address: "2544 N 7th St\nPhoenix, AZ 85006",
+          latitude: 33.476084,
+          longitude: -112.065637,
+          sentiment: 0.3888888889,
+        },
+        {
+          categories: "Chinese",
+          state: "WI",
+          index: 2602,
+          name: "Joe's Kitchen",
+          full_address: "4602 Monona Dr\nLake Edge\nMonona, WI 53716",
+          latitude: 43.070110321,
+          longitude: -89.3255767822,
+          sentiment: 0.8,
+        },
+        {
+          categories: "Chinese",
+          state: "WI",
+          index: 2701,
+          name: "Noodle Express",
+          full_address:
+            "2817 E Washington Ave\nStarkweather - Yahar\nMadison, WI 53704",
+          latitude: 43.1028868,
+          longitude: -89.3447941,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Chinese",
+          state: "WI",
+          index: 2573,
+          name: "House of Mei",
+          full_address: "120 E Main St\nSun Prairie, WI 53590",
+          latitude: 43.1833482,
+          longitude: -89.2129287,
+          sentiment: 0.619047619,
+        },
+        {
+          categories: "Chinese",
+          state: "NV",
+          index: 2651,
+          name: "Lotus Chinese Restaurant & Lounge",
+          full_address: "215 S Water St\nHenderson, NV 89015",
+          latitude: 36.0316499,
+          longitude: -114.9819031,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Chinese",
+          state: "NV",
+          index: 2679,
+          name: "Mr. Bejing",
+          full_address:
+            "730 E. Flamingo Suite 8\nEastside\nLas Vegas, NV 89119",
+          latitude: 36.114988,
+          longitude: -115.147904,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Chinese",
+          state: "NV",
+          index: 2708,
+          name: "Oasis Asian Kitchen",
+          full_address:
+            "4011 S Buffalo Dr\nSte B106\nSpring Valley\nLas Vegas, NV 89147",
+          latitude: 36.1165471,
+          longitude: -115.2623677,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Chinese",
+          state: "GA",
+          index: 2957,
+          name: "Wok N' Roll",
+          full_address: "250 Auburn Ave NE\n#101\nAtlanta, GA 53562",
+          latitude: 43.11528,
+          longitude: -89.52492,
+          sentiment: 0.25,
+        },
+        {
+          categories: "Chinese",
+          state: "AZ",
+          index: 2595,
+          name: "Jade Palace",
+          full_address: "8120 N Hayden Rd\nScottsdale, AZ 85258",
+          latitude: 33.5557353,
+          longitude: -111.8988152,
+          sentiment: 0.7142857143,
+        },
+        {
+          categories: "Chinese",
+          state: "AZ",
+          index: 2749,
+          name: "Panda Express",
+          full_address: "1747 E Florence Blvd\nCasa Grande, AZ 85122",
+          latitude: 32.879219,
+          longitude: -111.7121758,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Chinese",
+          state: "AZ",
+          index: 2967,
+          name: "Wongs To Go",
+          full_address: "5219 S 7th St\nPhoenix, AZ 85040",
+          latitude: 33.3989418,
+          longitude: -112.0643885,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "WI",
+          index: 922,
+          name: "America Latina",
+          full_address: "745 N Highpoint Rd\nWexford\nMadison, WI 53717",
+          latitude: 43.0760775,
+          longitude: -89.5184744,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "WI",
+          index: 1933,
+          name: "Swanson's Supper Club",
+          full_address: "300 E Holum St\nDeForest, WI 53532",
+          latitude: 43.247959,
+          longitude: -89.339923,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "WI",
+          index: 2007,
+          name: "The Egg & I Restaurant",
+          full_address: "2501 W Beltline Hwy\nSte 111\nMadison, WI 53713",
+          latitude: 43.0342511,
+          longitude: -89.4217489,
+          sentiment: 0.6,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "NV",
+          index: 1976,
+          name: "The Cafe",
+          full_address: "Eldorado Casino\n140 Water St\nHenderson, NV 89015",
+          latitude: 36.032039,
+          longitude: -114.9834743,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "NV",
+          index: 1279,
+          name: "Dreamers Bar & Grill",
+          full_address:
+            "2381 E Windmill Ln\nSte 26\nSoutheast\nLas Vegas, NV 89123",
+          latitude: 36.041095,
+          longitude: -115.120455,
+          sentiment: 0.6,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "NV",
+          index: 1833,
+          name: "Rush Hour Tavern",
+          full_address: "3985 E Sunset Rd\nSte A\nLas Vegas, NV 89120",
+          latitude: 36.070636053,
+          longitude: -115.0876810615,
+          sentiment: 0.6,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "AZ",
+          index: 1276,
+          name: "Double Overtime Sports Grille",
+          full_address: "2235 S Power Rd\nMesa, AZ 85209",
+          latitude: 33.375057,
+          longitude: -111.687177,
+          sentiment: 1.0,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "AZ",
+          index: 1634,
+          name: "Monroe's Downtown",
+          full_address: "3 W Monroe St\nPhoenix, AZ 85003",
+          latitude: 33.4503624,
+          longitude: -112.0750411,
+          sentiment: 1.0,
+        },
+        {
+          categories: "American (Traditional)",
+          state: "AZ",
+          index: 2194,
+          name: "Zammi's Grill",
+          full_address: "4040 S Arizona Ave\nSte 7\nChandler, AZ 85248",
+          latitude: 33.2464267,
+          longitude: -111.8428351,
+          sentiment: 0.8333333333,
+        },
+        {
+          categories: "American (New)",
+          state: "WI",
+          index: 585,
+          name: "Pita Pit",
+          full_address: "449 State St B\nCapitol\nMadison, WI 53703",
+          latitude: 43.074475,
+          longitude: -89.393396,
+          sentiment: 0.8,
+        },
+        {
+          categories: "American (New)",
+          state: "WI",
+          index: 391,
+          name: "Kennedy Manor Dining Room & Bar",
+          full_address: "1 Langdon St\nSte 103\nCapitol\nMadison, WI 53703",
+          latitude: 43.07836,
+          longitude: -89.3897099,
+          sentiment: 0.5555555556,
+        },
+        {
+          categories: "American (New)",
+          state: "WI",
+          index: 590,
+          name: "Porktropolis",
+          full_address: "1112 N Bristol St\nSun Prairie, WI 53590",
+          latitude: 43.1958201,
+          longitude: -89.2109284,
+          sentiment: 0.4736842105,
+        },
+        {
+          categories: "American (New)",
+          state: "NV",
+          index: 12,
+          name: "17 South Booze & Bites",
+          full_address: "7200 S Las Vegas Blvd\nSoutheast\nLas Vegas, NV 89119",
+          latitude: 36.0596893,
+          longitude: -115.1715273,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (New)",
+          state: "NV",
+          index: 87,
+          name: "Big Town Hero",
+          full_address: "3130 E Sunset Rd\nSoutheast\nLas Vegas, NV 89120",
+          latitude: 36.0718982,
+          longitude: -115.1068951,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (New)",
+          state: "NV",
+          index: 175,
+          name: "Chickenow",
+          full_address: "3700-3734 Koval Ln\nEastside\nLas Vegas, NV 89169",
+          latitude: 36.1081504822,
+          longitude: -115.1640090942,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (New)",
+          state: "AZ",
+          index: 856,
+          name: "Waltz & Weiser",
+          full_address: "6902 E Greenway Pkwy\nScottsdale, AZ 85254",
+          latitude: 33.6247569,
+          longitude: -111.9329277,
+          sentiment: 0.75,
+        },
+        {
+          categories: "American (New)",
+          state: "AZ",
+          index: 376,
+          name: "Jack in the Box",
+          full_address: "141 N. Arizona Ave\nChandler, AZ 85224",
+          latitude: 33.3053808,
+          longitude: -111.8412081,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "American (New)",
+          state: "AZ",
+          index: 388,
+          name: "Karla's Sports Lounge & Restaurant",
+          full_address: "2448 Grand Ave\nPhoenix, AZ 85009",
+          latitude: 33.4763758615,
+          longitude: -112.1116781349,
+          sentiment: 0.6666666667,
+        },
+        {
+          categories: "Afghan",
+          state: "WI",
+          index: 3,
+          name: "Kabul Restaurant",
+          full_address: "541 State St\nCapitol\nMadison, WI 53703",
+          latitude: 43.0748598,
+          longitude: -89.3951624,
+          sentiment: 0.1847826087,
+        },
+        {
+          categories: "Afghan",
+          state: "WI",
+          index: 5,
+          name: "Maza",
+          full_address: "558 State St\nCapitol\nMadison, WI 53774",
+          latitude: 43.075141,
+          longitude: -89.394958,
+          sentiment: 0.1666666667,
+        },
+        {
+          categories: "Afghan",
+          state: "NV",
+          index: 1,
+          name: "Kabob Express",
+          full_address:
+            "4912 S Eastern Ave\nSte 3\nSoutheast\nLas Vegas, NV 89119",
+          latitude: 36.0996917,
+          longitude: -115.1179542,
+          sentiment: 0.2580645161,
+        },
+        {
+          categories: "Afghan",
+          state: "NV",
+          index: 2,
+          name: "Kabob Factory",
+          full_address:
+            "8150 S Maryland Pkwy\n120\nSoutheast\nLas Vegas, NV 89123",
+          latitude: 36.0416591,
+          longitude: -115.1353976,
+          sentiment: 0.2222222222,
+        },
+        {
+          categories: "Afghan",
+          state: "AZ",
+          index: 9,
+          name: "Zaytoon Kabob Bistro",
+          full_address: "4929 W Ray Rd\nChandler, AZ 85226",
+          latitude: 33.319526,
+          longitude: -111.925763,
+          sentiment: 0.5,
+        },
+        {
+          categories: "Afghan",
+          state: "AZ",
+          index: 4,
+          name: "Khyber Halal",
+          full_address: "4030 N 24th St\nPhoenix, AZ 85016",
+          latitude: 33.4940035,
+          longitude: -112.0302179,
+          sentiment: 0.3797468354,
+        },
+        {
+          categories: "Afghan",
+          state: "AZ",
+          index: 0,
+          name: "Flaming Kabob",
+          full_address: "2252 E Baseline Rd\nMesa, AZ 85204",
+          latitude: 33.379512,
+          longitude: -111.78441,
+          sentiment: 0.3291139241,
+        },
+      ];
+      const categories = [
+        "Turkish",
+        "Indian",
+        "Mexican",
+        "Italian",
+        "Chinese",
+        "Mediterranean",
+        "American (New)",
+        "American (Traditional)",
+        "Lebanese",
+        "Moroccan",
+        "Afghan",
+        "Japanese",
+      ];
+      const correlation = {
+        Afghan: "Japanese",
+        "American (New)": "Indian",
+        "American (Traditional)": "Moroccan",
+        Chinese: "Moroccan",
+        Indian: "American (Traditional)",
+        Italian: "Indian",
+        Japanese: "Moroccan",
+        Lebanese: "Japanese",
+        Mediterranean: "Japanese",
+        Mexican: "Moroccan",
+        Moroccan: "Mexican",
+        Turkish: "Japanese",
+      };
+      const states = ["WI", "NV", "AZ", "GA"];
+      function getPopularity(category, state) {
+        var pop = popular.filter(
+          (pop) => pop.categories == category && pop.state == state
+        );
+        return !pop ? [] : pop;
+      }
+
+      function getRanked(category, state) {
+        var sent = sentiment.filter(
+          (pop) => pop.categories == category && pop.state == state
+        );
+        return !sent ? [] : sent;
+      }
+      function showContent(popular, highlyRated, category, tryItOut = true) {
+        var mainTemplate = document.getElementsByClassName("main-tpl")[0];
+        var mainClone = mainTemplate.content.cloneNode(true);
+        document.getElementsByClassName("rest-info")[0].appendChild(mainClone);
+        let alertSection = document
+          .getElementsByClassName("rest-info")[0]
+          .querySelector(".alert");
+
+        if (popular.length == 0 && highlyRated.length == 0) {
+          alertSection.classList.add("alert-danger");
+          alertSection.querySelector(
+            ".alert-heading"
+          ).innerText = `Sorry No Options Available`;
+          return;
+        }
+        if (tryItOut) {
+          alertSection.classList.add("alert-success");
+          alertSection.querySelector(
+            ".alert-heading"
+          ).innerText = `Well Done! Lets Try Out ${category}`;
+        } else {
+          alertSection.classList.add("alert-warning");
+          alertSection.querySelector(
+            ".alert-heading"
+          ).innerText = `Follow the herd! Here is your ${category} options`;
+        }
+
+        var cardTemplate = document.getElementsByClassName("rest-tpl")[0];
+
+        popular.forEach((pop) => {
+          var clon = cardTemplate.content.cloneNode(true);
+          clon.querySelector(".card-title").innerText = pop.name;
+          clon.querySelector(".card").classList.add("text-left");
+          clon.querySelector(".card-text").innerText = pop.full_address;
+          clon.querySelector(".card-link").dataset.full_address =
+            pop.full_address;
+          clon.querySelector(".card-link").dataset.latitude = pop.latitude;
+          clon.querySelector(".card-link").dataset.longitude = pop.longitude;
+          document.getElementsByClassName("most-pop")[0].appendChild(clon);
+        });
+        highlyRated.forEach((rate) => {
+          var clon = cardTemplate.content.cloneNode(true);
+          clon.querySelector(".card-title").innerText = rate.name;
+          clon.querySelector(".card").classList.add("text-right");
+          clon.querySelector(".card-text").innerText = rate.full_address;
+          clon.querySelector(".card-link").dataset.full_address =
+            rate.full_address;
+          clon.querySelector(".card-link").dataset.latitude = rate.latitude;
+          clon.querySelector(".card-link").dataset.longitude = rate.longitude;
+          document.getElementsByClassName("highly-rated")[0].appendChild(clon);
+        });
+
+        document.querySelectorAll(".card-link").forEach((btn) => {
+          btn.addEventListener("click", (event) => {
+            frame = document.getElementsByTagName("iframe")[0];
+            var search = encodeURI(
+              `${btn.dataset.name} ${btn.dataset.full_address}`
+            );
+            frame.src = `https://www.google.com/maps/embed/v1/search?key=yAdcZlFVAPUdWEqfKHITpI6aLIWRMUYXSs
+      &center=${btn.dataset.latitude},${btn.dataset.longitude}&zoom=18&q=${search}`;
+            frame.classList.remove("d-none");
+          });
+        });
+      }
+      let cuisineList = document.querySelector("#cuisine"),
+        stateList = document.querySelector("#state"),
+        tryItButton = document.querySelector(".try-it-button"),
+        sheepButton = document.querySelector(".sheep-button");
+      categories.forEach((cat) => {
+        var option = document.createElement("option");
+        option.text = cat;
+        option.value = cat;
+        cuisineList.add(option);
+      });
+      states.forEach((state) => {
+        var option = document.createElement("option");
+        option.text = state;
+        option.value = state;
+        stateList.add(option);
+      });
+
+      function toggleButton(selectObject) {
+        var stateValue = stateList.value;
+        var categoryValue = cuisineList.value;
+        if (stateValue.includes("Select") || categoryValue.includes("Select")) {
+          tryItButton.disabled = true;
+          sheepButton.disabled = true;
+        } else {
+          tryItButton.disabled = false;
+          sheepButton.disabled = false;
+        }
+      }
+      sheepButton.onclick = function () {
+        let restInfo = document.getElementsByClassName("rest-info")[0],
+          mainContent = restInfo.getElementsByClassName("main-content")[0];
+        mainContentAlert = restInfo.getElementsByClassName(
+          "main-content-alert"
+        )[0];
+        if (!!mainContent) {
+          mainContent.parentNode.removeChild(mainContent);
+          mainContentAlert.parentNode.removeChild(mainContentAlert);
+        }
+
+        var stateValue = stateList.value;
+        var categoryValue = cuisineList.value;
+        showContent(
+          getPopularity(categoryValue, stateValue),
+          getRanked(categoryValue, stateValue),
+          categoryValue,
+          false
+        );
+      };
+      tryItButton.onclick = function () {
+        let restInfo = document.getElementsByClassName("rest-info")[0],
+          mainContent = restInfo.getElementsByClassName("main-content")[0];
+        mainContentAlert = restInfo.getElementsByClassName(
+          "main-content-alert"
+        )[0];
+        if (!!mainContent) {
+          mainContent.parentNode.removeChild(mainContent);
+          mainContentAlert.parentNode.removeChild(mainContentAlert);
+        }
+        var stateValue = stateList.value;
+        var categoryValue = cuisineList.value;
+        var leastCorrelated = correlation[categoryValue];
+        showContent(
+          getPopularity(leastCorrelated, stateValue),
+          getRanked(leastCorrelated, stateValue),
+          leastCorrelated
+        );
+      };
+    </script>
+  </body>
+</html>
