@@ -2119,8 +2119,8 @@
         document.querySelectorAll(".card-link").forEach((btn) => {
           btn.addEventListener("click", (event) => {
             frame = document.getElementsByTagName("iframe")[0];
-             var search = encodeURI(
-              `${btn.dataset.name.replace('/[^a-zA-Z0-9 ]/g')} ${btn.dataset.full_address.replace('/[^a-zA-Z0-9 ]/g')}`
+              var search = encodeURI(
+              `${btn.dataset.name.replace((/[&\/\\#,+()$~%.'":*?<>{}]/g, ''))} ${btn.dataset.full_address.replace((/[&\/\\#,+()$~%.'":*?<>{}]/g, ''))}`
             );
             frame.src = `https://www.google.com/maps/embed/v1/search?key=AIzaSyAdcZlFVAPUdWEqfKHITpI6aLIWRMUYXSs
       &center=${btn.dataset.latitude},${btn.dataset.longitude}&zoom=18&q=${search}`;
