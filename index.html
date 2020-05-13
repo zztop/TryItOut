@@ -2100,6 +2100,7 @@
             pop.full_address;
           clon.querySelector(".card-link").dataset.latitude = pop.latitude;
           clon.querySelector(".card-link").dataset.longitude = pop.longitude;
+          clon.querySelector(".card-link").dataset.longitude = pop.name;
           document.getElementsByClassName("most-pop")[0].appendChild(clon);
         });
         highlyRated.forEach((rate) => {
@@ -2111,14 +2112,15 @@
             rate.full_address;
           clon.querySelector(".card-link").dataset.latitude = rate.latitude;
           clon.querySelector(".card-link").dataset.longitude = rate.longitude;
+          clon.querySelector(".card-link").dataset.name = rate.name;
           document.getElementsByClassName("highly-rated")[0].appendChild(clon);
         });
 
         document.querySelectorAll(".card-link").forEach((btn) => {
           btn.addEventListener("click", (event) => {
             frame = document.getElementsByTagName("iframe")[0];
-            var search = encodeURI(
-              `${btn.dataset.name} ${btn.dataset.full_address}`
+             var search = encodeURI(
+              `${btn.dataset.name.replace('/[^a-zA-Z0-9 ]/g')} ${btn.dataset.full_address.replace('/[^a-zA-Z0-9 ]/g')}`
             );
             frame.src = `https://www.google.com/maps/embed/v1/search?key=AIzaSyAdcZlFVAPUdWEqfKHITpI6aLIWRMUYXSs
       &center=${btn.dataset.latitude},${btn.dataset.longitude}&zoom=18&q=${search}`;
